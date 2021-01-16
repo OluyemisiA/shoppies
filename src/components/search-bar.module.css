@@ -1,0 +1,21 @@
+form label {
+  color: #d1d5da;
+}
+
+input.search {
+  background: none;
+  border: 1px solid #444d56;
+  display: block;
+  color: #d1d5da;
+  margin-top: 10px;
+  padding: 10px;
+  width: calc(100% - 20px);
+}
+
+input.search:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #d1d5da;
+}

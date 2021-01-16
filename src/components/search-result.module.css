@@ -1,0 +1,46 @@
+.btn {
+  background: transparent;
+  border: 1px solid #444d56;
+  color: #444d56;
+  cursor: pointer;
+  margin: 5px 0;
+  padding: 5px 15px;
+  outline: none;
+}
+
+.btn:disabled {
+  background: #3d3b44;
+  color: #959da5;
+}
+
+.card {
+  background: rgba(19, 18, 38, 1);
+  padding: 5%;
+}
+
+.count {
+  color: #444d56;
+  font-size: 0.7rem;
+  font-weight: 100;
+  text-align: right;
+}
+
+ul.search {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.search li {
+  border-bottom: 0.2px solid #444d56;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #444d56;
+  line-height: 1.6;
+  padding: 10px 0;
+}
+
+ul.search li span {
+  margin-right: 10px;
+}

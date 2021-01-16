@@ -1,0 +1,44 @@
+.App {
+  text-align: left;
+  background: linear-gradient(120deg, rgb(131, 24, 72) 5%, 15%, #29286a, #000);
+  min-height: 100vh;
+}
+
+h1 {
+  color: #fff;
+}
+
+p {
+  color: #d1d5da;
+  font-weight: 100;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.bg-secondary {
+  background: linear-gradient(#212158, #1f1a40ce 80%);
+}
+
+.container {
+  padding: 10% 4%;
+  min-height: 100vh;
+  width: calc(50% - 8%);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.transition {
+  position: fixed;
+  right: 0;
+  width: 40% !important;
+  transition: 0.3s ease-in-out;
+}
+
+.transition.d-none {
+  right: -1000px;
+}
