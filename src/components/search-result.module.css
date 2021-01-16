@@ -14,13 +14,13 @@
 }
 
 .card {
-  background: rgba(19, 18, 38, 1);
+  background: linear-gradient(#171742ec, #1f1a40ea 80%);
   padding: 5%;
 }
 
 .count {
   color: #444d56;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 100;
   text-align: right;
 }

@@ -3,7 +3,6 @@ import style from "./search-bar.module.css";
 const SearchBar = ({ onMovieSearch }) => {
   return (
     <form>
-      <label htmlFor="movie-title">Movie Title</label>
       <input
         className={style.search}
         type="text"

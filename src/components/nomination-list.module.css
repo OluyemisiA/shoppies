@@ -28,8 +28,8 @@
 }
 
 .count {
-  color: #444d56;
-  font-size: 0.9rem;
+  color: #6a737d;
+  font-size: 1rem;
   font-weight: 100;
   text-align: right;
 }
@@ -41,6 +41,7 @@
 
 .heading {
   color: #f6f8fa;
+  font-size: 3em;
   font-weight: 100;
 }
 
@@ -55,15 +56,15 @@ ul.nominees li {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  color: #444d56;
+  color: #6a737d;
   line-height: 1.6;
   padding: 5px 0;
 }
 
 ul.nominees li button {
   background: none;
-  border: 1px solid #444d56;
-  color: #444d56;
+  border: 1px solid #6a737d;
+  color: #6a737d;
   cursor: pointer;
   outline: none;
   padding: 0.5em 1em;
@@ -74,5 +75,5 @@ ul.nominees li span{
 }
 
 .nomineeContainer {
-  padding: 2% 20% 0 5%;
+  padding: 0% 20% 0 5%;
 }

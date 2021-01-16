@@ -1,10 +1,6 @@
-form label {
-  color: #d1d5da;
-}
-
 input.search {
   background: none;
-  border: 1px solid #444d56;
+  border: 1px solid #fff;
   display: block;
   color: #d1d5da;
   margin-top: 10px;

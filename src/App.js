@@ -64,7 +64,7 @@ function App() {
         <div className="container">
           <h1>The Shoppies</h1>
           <p className="mt-10">
-            Search and nominated your best movies for the shoppies award 2020
+            Search and nominate your best movies for the shoppies award 2020
           </p>
           <SearchBar onMovieSearch={setMovieTitle} />
           <SearchResult
@@ -74,7 +74,7 @@ function App() {
             nominated={nominations}
           />
         </div>
-
+        {/* Show nomiantion list button goes here */}
         <div
           className={`bg-secondary container transition position ${showNomination}`}
         >
