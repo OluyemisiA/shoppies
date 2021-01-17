@@ -1,11 +1,11 @@
 .banner {
-    background: red;
+    background: #959da5e0;
     border-radius: 5px;
     box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.6);
     color: #fff;
     padding: 10px 20px;
     position: fixed;
-    right: 20px;
+    left: 20px;
     top: -100px;
     width: 20%;
     text-align: center;

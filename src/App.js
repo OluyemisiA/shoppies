@@ -11,6 +11,7 @@ function App() {
   const [hasBanner, setHasBanner] = useState(false);
   const [omdbMovies, setOmdbMovies] = useState([]);
   const [showNomination, setShowNomination] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const api = "http://www.omdbapi.com/";
 
   useEffect(() => {
@@ -18,33 +19,44 @@ function App() {
   }, [movieTitle]);
 
   useEffect(() => {
-    nominations.length > 0
-      ? setShowNomination("")
-      : setShowNomination("d.none");
+    nominations.length > 0 ? setShowNomination("show") : setShowNomination("");
   }, [nominations]);
 
   const omdbMovieSearchHandler = async (searchTerm) => {
-    const fetchData = await fetch(`${api}?s=${searchTerm}&type=movie&apikey=41dae29c`);
-    const result = await fetchData.json();
-    setOmdbMovies([]);
-    if (fetchData.status === 200 && result.Response === "True") {
-      const data = result.Search;
-      const movies = data.map(({ Title, Year, imdbID }) => ({
-        Title,
-        Year,
-        imdbID,
-      }));
-      setOmdbMovies(movies);
+    try {
+      setIsLoading(true);
+      const fetchData = await fetch(
+        `${api}?s=${searchTerm}&type=movie&apikey=41dae29c`
+      );
+      const result = await fetchData.json();
+      setOmdbMovies([]);
+      if (fetchData.status === 200 && result.Response === "True") {
+        const data = result.Search;
+        const movies = data.map(({ Title, Year, imdbID }) => ({
+          Title,
+          Year,
+          imdbID,
+        }));
+        setOmdbMovies(movies);
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const nominationHandler = (nominees) => {
     if (nominations.length === 5) {
-      setHasBanner(true);
-      setShowNomination("");
       return;
     }
-    setNominations([...nominations, nominees]);
+    setNominations((previousNominations) => {
+      let newArray = [...previousNominations, nominees];
+      if (newArray.length === 5) {
+        setHasBanner(true);
+      }
+      return newArray;
+    });
   };
 
   const removeNominationHandler = (key) => {
@@ -57,7 +69,6 @@ function App() {
     }
   };
 
-
   return (
     <div className="App">
       <div className="flex">
@@ -67,24 +78,31 @@ function App() {
             Search and nominate your best movies for the shoppies award 2020
           </p>
           <SearchBar onMovieSearch={setMovieTitle} />
+
           <SearchResult
             searchTerm={movieTitle}
             omdbResult={omdbMovies}
             onNominateMovie={nominationHandler}
             nominated={nominations}
+            isLoading={isLoading}
           />
         </div>
-        {/* Show nomiantion list button goes here */}
+        <button
+          className={`btn ${showNomination ? "hide" : ""} `}
+          onClick={() => setShowNomination("show")}
+        >
+          Nominations<span>&#9776;</span>
+        </button>
         <div
           className={`bg-secondary container transition position ${showNomination}`}
         >
           <NotificationBanner show={hasBanner}>
             You can only nominate 5 movies.
-            </NotificationBanner>
+          </NotificationBanner>
           <NominationList
             nominations={nominations}
             onRemoveNominee={removeNominationHandler}
-            onCloseNomination={() => setShowNomination("d-none")}
+            onCloseNomination={() => setShowNomination("")}
           />
         </div>
       </div>

@@ -34,10 +34,6 @@
   text-align: right;
 }
 
-.nominees div {
-  display: flex;
-  flex-direction: column;
-}
 
 .heading {
   color: #f6f8fa;
@@ -66,8 +62,11 @@ ul.nominees li button {
   border: 1px solid #6a737d;
   color: #6a737d;
   cursor: pointer;
+  margin: 5px 0;
   outline: none;
   padding: 0.5em 1em;
+  text-align: center;
+  width: 100px;
 }
 
 ul.nominees li span{
