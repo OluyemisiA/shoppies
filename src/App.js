@@ -12,7 +12,7 @@ function App() {
   const [omdbMovies, setOmdbMovies] = useState([]);
   const [showNomination, setShowNomination] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const api = "http://www.omdbapi.com/";
+  //const api = "http://www.omdbapi.com/";
 
   useEffect(() => {
     omdbMovieSearchHandler(movieTitle);
@@ -26,7 +26,7 @@ function App() {
     try {
       setIsLoading(true);
       const fetchData = await fetch(
-        `${api}?s=${searchTerm}&type=movie&apikey=41dae29c`
+        `/api/?s=${searchTerm}&type=movie&apikey=41dae29c`
       );
       const result = await fetchData.json();
       setOmdbMovies([]);
