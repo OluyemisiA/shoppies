@@ -1,6 +1,6 @@
 .App {
   text-align: left;
-  background: linear-gradient(120deg, rgb(150, 81, 112) 5%, 15%, #29286ac9, #000000ce),
+  background: linear-gradient( 138deg, #c1272ce8, #29296E 26%,#1b1409d7 90%),
   url("./assets/greatest-showman-official-movie-poster.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -47,7 +47,7 @@ p {
 }
 
 .bg-secondary {
-  background: linear-gradient(#212158d2, #1f1a40d0 80%);
+  background: linear-gradient( 138deg, #212158e1,#1B1409e1 80%);
 }
 
 .container {
